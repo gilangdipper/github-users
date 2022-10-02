@@ -20,13 +20,40 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --quiet --fix '**/*.{js,jsx,ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [
+      "airbnb",
+      "airbnb-typescript",
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "project": ["./tsconfig.json"],
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": ["react", "jest", "prettier"],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "trailingComma": "all",
+          "endOfLine": "lf",
+          "semi": false,
+          "singleQuote": true,
+          "printWidth": 80,
+          "tabWidth": 2
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -39,5 +66,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
   }
 }
