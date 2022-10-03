@@ -12,7 +12,9 @@
     "@types/react-dom": "^18.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
@@ -26,22 +28,38 @@
   },
   "eslintConfig": {
     "extends": [
-      "airbnb",
-      "airbnb-typescript",
       "react-app",
       "react-app/jest",
-      "plugin:prettier/recommended"
+      "airbnb",
+      "airbnb-typescript",
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:react/jsx-runtime"
     ],
     "parserOptions": {
-      "project": ["./tsconfig.json"],
+      "project": [
+        "./tsconfig.json"
+      ],
       "ecmaFeatures": {
         "jsx": true
       },
       "ecmaVersion": 12,
       "sourceType": "module"
     },
-    "plugins": ["react", "jest", "prettier"],
+    "plugins": [
+      "react",
+      "jest",
+      "prettier"
+    ],
     "rules": {
+      "react/react-in-jsx-scope": "off",
+      "import/prefer-default-export": "off",
+      "react/function-component-definition": ["error", {
+        "namedComponents": ["function-declaration", "function-expression", "arrow-function"],
+        "unnamedComponents": ["function-expression", "arrow-function"]
+      }],
       "prettier/prettier": [
         "error",
         {
@@ -68,6 +86,7 @@
     ]
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.26",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
