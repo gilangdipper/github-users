@@ -13,7 +13,7 @@ const UserDetails = () => {
   return (
     <MainContainer>
       <div className="main-content">
-        <Headers title="Person" />
+        <Headers title="Person" hasBack />
         <UserInfo userName={userName} />
       </div>
     </MainContainer>

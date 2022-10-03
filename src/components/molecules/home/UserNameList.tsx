@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   > a {
     text-decoration: none;
     color: inherit;
+    text-transform: capitalize;
   }
 `
 
