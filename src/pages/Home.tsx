@@ -6,8 +6,8 @@ import { MainContainer } from './common/styles'
 function Home() {
   const userList = ['GrahamCampbell', 'fabpot', 'weierophinney', 'rkh', 'josh']
   return (
-    <MainContainer>
-      <div className="main-content">
+    <MainContainer data-testid="main-container">
+      <div className="main-content" data-testid="main-container-main-content">
         <Headers title="Github Users" />
         <HomeDetails list={userList} />
       </div>

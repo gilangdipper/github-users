@@ -11,8 +11,8 @@ const UserDetails = () => {
   }
 
   return (
-    <MainContainer>
-      <div className="main-content">
+    <MainContainer data-testid="main-container">
+      <div className="main-content" data-testid="main-container-main-content">
         <Headers title="Person" hasBack />
         <UserInfo userName={userName} />
       </div>

@@ -23,7 +23,7 @@ function App() {
     </TransitionGroup>
   )
   return (
-    <div className="App">
+    <div className="App" data-testid="App">
       <ReactQueryClient>{createRoute()}</ReactQueryClient>
     </div>
   )
