@@ -3,8 +3,8 @@ import { redirect } from 'react-router-dom'
 import styled from 'styled-components'
 
 import useGetUsers from '../../hooks/useGetUserDetails'
-import UserInfoBody from '../molecules/UserInfo/UserInfoBody'
-import UserInfoHeader from '../molecules/UserInfo/UserInfoHeader'
+import UserInfoDetails from '../molecules/userInfo/UserInfoDetails'
+import UserInfoBanner from '../molecules/userInfo/UserInfoBanner'
 
 const UserInfoWrapper = styled.div`
   display: flex;
@@ -29,12 +29,12 @@ const UserInfo: FC<{ userName: string }> = ({ userName }) => {
   }
   return (
     <UserInfoWrapper>
-      <UserInfoHeader
+      <UserInfoBanner
         avatar_url={person.avatar_url}
         name={person.name}
         bio={person.bio}
       />
-      <UserInfoBody location={person.location} company={person.company} />
+      <UserInfoDetails location={person.location} company={person.company} />
     </UserInfoWrapper>
   )
 }

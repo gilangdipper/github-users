@@ -24,7 +24,12 @@ type TText = {
 
 const Text: FC<TText> = ({ children, fontSize, fontWeight, color }) => {
   return (
-    <TextWrapper fontSize={fontSize} fontWeight={fontWeight} color={color}>
+    <TextWrapper
+      className="text-component"
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      color={color}
+    >
       {children}
     </TextWrapper>
   )

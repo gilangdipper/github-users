@@ -1,20 +1,10 @@
 import { FC } from 'react'
 import styled from 'styled-components'
-import { TUserResponse } from '../../../types'
-import Text from '../../atoms/Text'
 
-const stringToColour = (str: string) => {
-  let hash = 0
-  for (let i = 0; i < str.length; i++) {
-    hash = str.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  let colour = '#'
-  for (let i = 0; i < 3; i++) {
-    const value = (hash >> (i * 8)) & 0xff
-    colour += `00${value.toString(16)}`.substr(-2)
-  }
-  return colour
-}
+import getColorFromString from '../../../helpers/getColorFromString'
+import { TUserResponse } from '../../../types'
+
+import Text from '../../atoms/Text'
 
 const Wrapper = styled.div<{
   backDropTopColor: string
@@ -57,8 +47,8 @@ const Wrapper = styled.div<{
 const UserInfoHeader: FC<
   Pick<TUserResponse, 'avatar_url' | 'name' | 'bio'>
 > = ({ avatar_url, name, bio }) => {
-  const backDropTopColor = stringToColour(name)
-  const backDropBottomColor = stringToColour(bio || 'string')
+  const backDropTopColor = getColorFromString(name)
+  const backDropBottomColor = getColorFromString(bio || 'string')
 
   return (
     <Wrapper
