@@ -9,6 +9,7 @@ const HeadersWrapper = styled.div`
   background: #fff;
   border: 1px solid #d9dde0;
   border-radius: 16px;
+  margin-bottom: 20px;
 `
 
 const Headers: FC<{ title: string }> = ({ title }) => {
